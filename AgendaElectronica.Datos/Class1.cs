@@ -33,7 +33,7 @@ namespace AgendaElectronica.Datos
         {
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                SqlCommand cmd = new SqlCommand("sp_ModificarContacto", conexion);
+                SqlCommand cmd = new SqlCommand("ModificarContacto", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", contacto.Id);
                 cmd.Parameters.AddWithValue("@Nombre", contacto.Nombre);
@@ -48,7 +48,7 @@ namespace AgendaElectronica.Datos
         {
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                SqlCommand cmd = new SqlCommand("sp_EliminarContacto", conexion);
+                SqlCommand cmd = new SqlCommand("EliminarContacto", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", id);
 
@@ -61,7 +61,7 @@ namespace AgendaElectronica.Datos
         {
             using (SqlConnection conexion = new SqlConnection(cadenaConexion))
             {
-                SqlCommand cmd = new SqlCommand("sp_BuscarContactos", conexion);
+                SqlCommand cmd = new SqlCommand("BuscarContactos", conexion);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Nombre", nombre);
 
